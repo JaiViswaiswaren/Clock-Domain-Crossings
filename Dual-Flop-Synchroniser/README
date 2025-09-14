@@ -1,1 +1,26 @@
+# Dual Flip-Flop Synchronizer (SystemVerilog)
+
+This project implements a **Dual Flip-Flop Synchronizer** in SystemVerilog to safely transfer signals across clock domains.
+
+## 📌 Features
+- Two-stage flip-flop synchronizer  
+- Reduces **metastability** probability in CDC  
+- Works for single-bit control/status signals  
+
+## 📂 Module
+### `DUAL_FF_SYNC.sv`
+- Generic synchronizer  
+- Takes asynchronous input (`d_in`)  
+- Produces synchronized output (`q_out`)  
+
+```verilog
+always_ff @(posedge clk or negedge rst_n) begin
+  if (!rst_n) begin
+    q1    <= 0;
+    q_out <= 0;
+  end else begin
+    q1    <= d_in;
+    q_out <= q1;
+  end
+end
 
