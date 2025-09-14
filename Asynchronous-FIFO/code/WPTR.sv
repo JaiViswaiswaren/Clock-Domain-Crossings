@@ -11,7 +11,6 @@ module WPTR(
   assign b_wptr_next = b_wptr + (w_en && !full);
 
   // Binary-to-Gray conversion
-  // This is a combinatorial assignment, not a register.
   assign g_wptr = (b_wptr >> 1) ^ b_wptr;
 
   // Pointer updates and reset
@@ -23,10 +22,7 @@ module WPTR(
     end
   end
 
-  // Full condition logic (Corrected)
-  // Full occurs when the MSB of the write pointer is different from the synchronized
-  // read pointer's MSB, and the rest of the bits are the same. This distinguishes
-  // the full state from the empty state.
+  // Full condition logic 
   assign full = (g_wptr[3:2] != g_rptr_sync[3:2]) && (g_wptr[1:0] == g_rptr_sync[1:0]);
 
 endmodule
