@@ -1,7 +1,6 @@
 `timescale 1ns/1ps
 
 // Asynchronous FIFO Top Module
-// Uses Gray code pointers to safely handle reads and writes between different clock domains.
 module ASYNC_FIFO(
   input  logic wclk, rclk,
   input  logic wrst_n, rrst_n,
@@ -70,6 +69,4 @@ module ASYNC_FIFO(
       data_out <= mem[b_rptr[2:0]];
   end
 
-/*assign full = (g_wptr[3] != g_rptr[3]) && (g_wptr[2:0] == g_rptr[2:0]);
-assign empty = (g_rptr == g_wptr);*/
 endmodule
