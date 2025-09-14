@@ -6,6 +6,7 @@ This project implements a **Dual Flip-Flop Synchronizer** in SystemVerilog to sa
 - Two-stage flip-flop synchronizer  
 - Reduces **metastability** probability in CDC  
 - Works for single-bit control/status signals  
+<img width="736" height="148" alt="image" src="https://github.com/user-attachments/assets/78b8e021-227e-4a46-8693-071c613c179b" />
 
 ## 📂 Module
 ### `DUAL_FF_SYNC.sv`
@@ -13,14 +14,4 @@ This project implements a **Dual Flip-Flop Synchronizer** in SystemVerilog to sa
 - Takes asynchronous input (`d_in`)  
 - Produces synchronized output (`q_out`)  
 
-```verilog
-always_ff @(posedge clk or negedge rst_n) begin
-  if (!rst_n) begin
-    q1    <= 0;
-    q_out <= 0;
-  end else begin
-    q1    <= d_in;
-    q_out <= q1;
-  end
-end
 
