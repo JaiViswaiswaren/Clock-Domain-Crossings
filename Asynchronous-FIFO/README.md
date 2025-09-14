@@ -8,6 +8,7 @@ This project implements an **Asynchronous FIFO** in SystemVerilog using **Gray-c
 - **Dual flip-flop synchronizers** for pointer transfer
 - Correct **full** and **empty** detection
 - Simple **testbench** included with VCD waveform output
+<img width="500" height="282" alt="image" src="https://github.com/user-attachments/assets/28eb5eab-b93f-4b1c-82c5-e172211cefc0" />
 
 ## 📂 Modules
 ### 1. `WPTR.sv`
@@ -31,6 +32,7 @@ This project implements an **Asynchronous FIFO** in SystemVerilog using **Gray-c
 - Dumps waveforms (`fifo_tb.vcd`)  
 
 ## Waveform Example
+<img width="895" height="258" alt="Screenshot 2025-09-14 at 7 06 04 PM" src="https://github.com/user-attachments/assets/4255b978-9c88-41f4-b87c-50fc5b3052ff" />
 Write until `full` is asserted, then read until `empty`:
 
 ## Note
